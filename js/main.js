@@ -22,6 +22,7 @@ function getdata_fromGithub(){
 function demo_self_introduction(){
 botui.message.removeAll({});
 botui.message.bot({
+    photo: true,
     content: "Hi. May I have your name, please?"
 }).then(function(){
     botui.message.human ({
@@ -36,14 +37,17 @@ botui.message.bot({
     });
 }).then(function(){
     botui.message.bot ({
+        photo: true,
         content: "Hi, " + github_uname + ". I want to know more about you."
     });
 }).then(function(){
     botui.message.human ({
+        photo: 'https://github.com/' + github_uname + '.png',
         content: bio
     });
 }).then(function(){
     botui.message.bot ({
+        photo: true,
         content: "Thank you!"
     });
 });
